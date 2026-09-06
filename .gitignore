@@ -1,0 +1,35 @@
+# gradle
+.gradle/
+build/
+out/
+classes/
+
+# idea
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# vscode
+.vscode/
+*.code-workspace
+
+# mac
+.DS_Store
+
+# minecraft
+run/
+.minecraft/
+
+# IDE
+*.swp
+*.swo
+*~
+.classpath
+.project
+.settings/
+bin/
+.factorypath
+
+# misc
+*.log
