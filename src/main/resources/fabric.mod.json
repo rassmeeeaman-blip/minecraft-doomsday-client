@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "Ahh"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/ahh_client/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.ahh.AhhClient"
+    ],
+    "client": [
+      "com.ahh.AhhClientEvents"
+    ]
+  },
+  "mixins": [
+    "ahh_client.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}
