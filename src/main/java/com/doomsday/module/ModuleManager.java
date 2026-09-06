@@ -4,6 +4,7 @@ import com.doomsday.module.impl.FlightModule;
 import com.doomsday.module.impl.ESPModule;
 import com.doomsday.module.impl.XrayModule;
 import com.doomsday.module.impl.FreecamModule;
+import com.doomsday.module.impl.KillAuraModule;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class ModuleManager {
         registerModule(new ESPModule());
         registerModule(new XrayModule());
         registerModule(new FreecamModule());
+        registerModule(new KillAuraModule());
     }
 
     public void registerModule(Module module) {
