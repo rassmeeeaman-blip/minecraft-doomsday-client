@@ -3,19 +3,26 @@ package com.doomsday.module.impl;
 import com.doomsday.module.Module;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.chunk.ChunkBuilder;
+import net.minecraft.block.Block;
 
 public class XrayModule extends Module {
-    private static final int[] ORE_BLOCKS = {
-        // Common ores
-        1, // Stone (for reference)
-        15, // Iron Ore
-        14, // Gold Ore
-        16, // Diamond Ore
-        21, // Lapis Ore
-        73, // Redstone Ore
-        129, // Emerald Ore
+    private static final int[] ORE_BLOCK_IDS = {
+        // Diamond
+        1, // Represents ore blocks by ID
+        // Gold
+        2,
+        // Iron 
+        3,
+        // Emerald
+        4,
+        // Lapis
+        5,
+        // Redstone
+        6,
+        // Copper
+        7,
+        // Coal
+        8
     };
 
     public XrayModule() {
@@ -40,14 +47,27 @@ public class XrayModule extends Module {
 
     @Override
     public void onTick() {
-        // X-Ray rendering is handled via mixin
+        // X-Ray rendering is handled via rendering mixin
         // This updates chunk data for x-ray vision
     }
 
-    public static boolean isOreBlock(int blockId) {
-        for (int ore : ORE_BLOCKS) {
-            if (ore == blockId) return true;
-        }
-        return false;
+    public static boolean isOreBlock(Block block) {
+        // Check if block is valuable ore
+        return block == Blocks.DIAMOND_ORE ||
+               block == Blocks.DEEPSLATE_DIAMOND_ORE ||
+               block == Blocks.GOLD_ORE ||
+               block == Blocks.DEEPSLATE_GOLD_ORE ||
+               block == Blocks.IRON_ORE ||
+               block == Blocks.DEEPSLATE_IRON_ORE ||
+               block == Blocks.EMERALD_ORE ||
+               block == Blocks.DEEPSLATE_EMERALD_ORE ||
+               block == Blocks.LAPIS_ORE ||
+               block == Blocks.DEEPSLATE_LAPIS_ORE ||
+               block == Blocks.REDSTONE_ORE ||
+               block == Blocks.DEEPSLATE_REDSTONE_ORE ||
+               block == Blocks.COPPER_ORE ||
+               block == Blocks.DEEPSLATE_COPPER_ORE ||
+               block == Blocks.COAL_ORE ||
+               block == Blocks.DEEPSLATE_COAL_ORE;
     }
 }
